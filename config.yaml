@@ -1,0 +1,53 @@
+Generator:
+  # num of images to gen
+  num_imgs: 5
+
+  save_path: gen_data
+
+  alphabet: АБВГДЕ.ЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя0123456789
+
+  # random rows angle range
+  row_angle: [-2, 2]
+
+  # random num words in page range
+  words_in_page: [10, 100]
+
+BackgroundGenerator:
+  # image size (h, w)
+  bg_size: [1000, 312]
+
+  # [optional] backgrounds folder path
+  bgs_path: 
+
+  # use stable-diffusion for random backgrounds generation
+  use_sd: False
+
+  # backgrounds augmentations
+  # [{Augment1Name: {param: value}}, {Augment2Name: {param: value}}, ...]
+  # augments: [{BarcodeAugment: {}}] # BarcodeAugment - add random barcode to image
+  augments: []
+
+RowGenerator:
+  # fonts folder path
+  fonts_path: data_for_gen/fonts
+
+  # random font size range
+  font_size: [10, 30]
+
+  # random color ranges
+  font_color_range: [[0, 255], [0, 255], [0, 255]]
+
+  # text generator
+  # {GeneratorName: {param: value}}
+  # text_generator: {RandomText: {words_in_row: [1, 5], max_word_len: 6}} # RandomText - words from random alphabet chars
+  text_generator: {WordFromText: {text_path: data_for_gen/source_texts/text.txt}} # WordFromText - words from source text
+
+TableGenerator:
+  # random num of table cells range (h, w)
+  cells_range: [5, 5]
+
+
+
+
+
+
